@@ -25,6 +25,7 @@ export const getStaticProps = async (ctx) => {
   const id = ctx.params.id;
   const db = await openDB();
   const microphone = await db.get("select * from microphone where id = ?", id);
+  //microphone đc get về là 1 object 
   return { props: microphone };
 };
 
